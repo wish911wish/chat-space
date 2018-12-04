@@ -1,4 +1,6 @@
-## usersテーブル
+# DB設計
+
+## users table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -10,7 +12,7 @@
 - has_many :messages
 - has_many :members
 
-## groupsテーブル
+## groups table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -20,7 +22,7 @@
 - has_many :users, through: :members
 - has_many :members
 
-## membersテーブル
+## members table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -31,7 +33,7 @@
 - belongs_to :group
 - belongs_to :user
 
-## commentsテーブル
+## comments table
 
 |Column|Type|Options|
 |------|----|-------|
