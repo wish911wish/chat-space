@@ -9,8 +9,8 @@
 
 ### Association
 - has_many :groups, through: :members
-- has_many :messages
 - has_many :members
+- has_many :comments
 
 ## groups table
 
@@ -21,6 +21,7 @@
 ### Association
 - has_many :users, through: :members
 - has_many :members
+- has_many :comments
 
 ## members table
 
@@ -43,5 +44,5 @@
 |image|text||
 
 ### Association
-- belongs_to :group
 - belongs_to :user
+- belongs_to :group
