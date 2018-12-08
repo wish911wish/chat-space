@@ -1,2 +1,31 @@
 @import "./reset";
 @import "font-awesome";
+
+.notification{
+  background-color: #38AEF0;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+
+.chat{
+  .chat-side{
+    background-color: #2f3e51;
+    height: 100vh;
+    width: 300px;
+    float: left;
+    .chat-side__user-name{
+      background-color: #253141;
+      height: 90px;
+    }
+    .chat-side__group-name{
+      background-color: #2f3e51;
+    }
+  }
+  .chat-main{
+    background-color: #DDDDDD;
+    height: 100vh;
+    width: calc(100vw - 300px);
+    float: left;
+  }
+}
