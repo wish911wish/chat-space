@@ -1,9 +1,128 @@
 
-%p.notification チャットスペース
+-# %p.notification チャットスペース
 .wrapper
   .chat
     .chat-side
-      .chat-side__user-name かわかみ
-      .chat-side__group-name グループ名
+      .chat-side__user
+        .user
+          %span.name 川上
+          .congig= fa_icon 'cog'
+          .edit= fa_icon 'edit'
+      .chat-side__group
+        .group-list
+          .group
+            .group-name グループ１
+            .group-comments グループ１のコメント
+          .group
+            .group-name グループ2
+            .group-comments グループ2のコメント
+          .group
+            .group-name グループ3
+            .group-comments グループ3のコメント
+          .group
+            .group-name グループ１
+            .group-comments グループ１のコメント
+          .group
+            .group-name グループ2
+            .group-comments グループ2のコメント
+          .group
+            .group-name グループ3
+            .group-comments グループ3のコメント
+          .group
+            .group-name グループ１
+            .group-comments グループ１のコメント
+          .group
+            .group-name グループ2
+            .group-comments グループ2のコメント
+          .group
+            .group-name グループ3
+            .group-comments グループ3のコメント
     .chat-main
+      .chat-main__group
+        .chat-main__group-name グループ１
+        .chat-main__group-mem
+          %span member
+          %ul.chat-main__group-members
+            %li.chat-main__group-member メンバー１
+            %li.chat-main__group-member メンバー２
+            %li.chat-main__group-member メンバー３
+        .chat-main__group-edit
+          %a Edit
+      .chat-main__coments
+        .coments
+          .coments-user-date
+            %span.user user01
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user02
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user03
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user01
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user02
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user03
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user01
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user02
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user03
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user01
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user02
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user03
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+        .coments
+          .coments-user-date
+            %span.user user01
+            %span.date 2016/10/02 06:27:07
+          .coments-text コメントコメントコメント
+
+      .chat-main__send
+        %form{:action => "", :method => "post"}
+          .message-text
+            %input.message-area{:type => "text", :name => "message", :placeholder => "type a message"}
+            %label
+              = fa_icon 'image'
+              %input.image{:type => "file", :name => "image"}
+          %input.message-button{:type => "submit", :value => "Send"}
+
+
 
