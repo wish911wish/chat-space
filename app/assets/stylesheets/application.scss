@@ -1,19 +1,8 @@
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
+@import "./top";
 @import "./side";
 @import "./main";
-
-.notification{
-  background-color: $color-common-button;
-  color: $color-common-white;
-  min-width: 980px;
-  text-align: center;
-}
-.container{
-  display: flex;
-}
-
-
 
 
