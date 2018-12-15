@@ -4,151 +4,153 @@
 .notification{
   background-color: #38AEF0;
   color: #FFFFFF;
+  min-width: 980px;
   text-align: center;
-  display: none;
 }
-.chat{
+.container{
   display: flex;
-  .chat-side{
+
+
+  .side{
     background-color: #2f3e51;
     color: #FFF;
     width: 300px;
     min-width: 300px;
-    .chat-side__user{
+    min-height: 100vh;
+    &__user{
       background-color: #253141;
       .user{
         padding: 35px 20px 40px 20px;
-        .name{
+        &__name{
           font-weight: bold;
           font-size: 16px;
         }
-        .edit{
+        &__edit{
           display: inline;
           float: right;
           margin: 0 3px;
         }
-        .congig{
+        &__congig{
           display: inline;
           float: right;
           margin: 0 3px;
         }
       }
     }
-    .chat-side__group{
+    &__group{
       background-color: #2f3e51;
       .group-list{
         padding: 20px 20px 0 20px;
-        .group{
+        &__group{
           margin: 0 0 40px 0;
-          .group-name{
-            font-size: 15px;
-          }
-          .group-comments{
-            font-size: 11px;
-            margin-top: 5px;
-          }
+        }
+        &__group-name{
+          font-size: 15px;
+        }
+        &__group-comments{
+          font-size: 11px;
+          margin-top: 5px;
         }
       }
     }
   }
-  .chat-main{
+
+
+  .main{
     background-color: #FFFFFF;
     width: calc(100vw - 300px);
     min-width: 680px;
     position: relative;
-    .chat-main__group{
+    &__group{
+      border-style: solid;
+      border-width: medium;
       border: #eeeeee;
       background-color: #FFFFFF;
       position: relative;
-      .chat-main__group-name{
-        font-size: 20px;
-        color: #333333;
-        padding: 35px 40px 15px 40px;
-      }
-      .chat-main__group-mem{
-        font-size: 12px;
-        color: #999999;
-        padding: 0 40px 0 40px;
-      }
-        ul{
-          display: inline;
-        }
-        li{
-          display: inline;
-        }
-      .chat-main__group-edit{
-        color: #38AEF0;
-        box-sizing: border-box;
-        border: solid 1.5px;
-        padding: 0 20px 0 20px;
-        position: absolute;
-        line-height: 40px;
-        top: 28px;
-        right: 40px;
-      }
     }
-    .chat-main__coments{
+    &__group-name{
+      font-size: 20px;
+      color: #333333;
+      padding: 35px 40px 15px 40px;
+    }
+    &__group-mem{
+      font-size: 12px;
+      color: #999999;
+      padding: 0 40px 0 40px;
+    }
+    &__group-members{
+      display: inline;
+    }
+    &__group-member{
+      display: inline;
+    }
+    &__group-edit{
+      color: #38AEF0;
+      box-sizing: border-box;
+      border: solid 1.5px;
+      padding: 0 20px 0 20px;
+      position: absolute;
+      line-height: 40px;
+      top: 28px;
+      right: 40px;
+    }
+    &__coments{
       background-color: #F5F5F5;
       position: absolute;
       width: 100%;
-      height: calc(100% - 98px - 50px);
+      height: calc(100% - 98px - 90px);
       overflow-y: scroll;
-      .coments{
+      .coment{
         padding: 40px 0 0 40px;
-      }
-        .coments-user-date{
-          .user{
-            font-size: 16px;
-            font-weight: bold;
-          }
-          .date{
-            font-size: 12px;
-            color: #999999;
-          }
+        &__user{
+          font-size: 16px;
+          font-weight: bold;
         }
-        .coments-text{
+        &__date{
+          font-size: 12px;
+          color: #999999;
+        }
+        &__text{
           color: #434A54;
           font-size: 14px;
           margin-top: 10px;
         }
+      }
     }
-    .chat-main__send{
+    &__send{
       background-color: #DCDCDC;
       width: 100%;
       position: absolute;
       bottom: 0;
-      form{
+      .input-area{
         width: calc(100% - 80px);
         display: inline-block;
         padding: 20px 40px 20px 40px;
-        .message-text{
+        &__text{
           width: calc(100% - 115px);
           display: inline-block;
           position: relative;
-          input.message-area{
+          input.text-box{
             width: 100%;
             height: 50px;
             box-sizing: border-box;
           }
-          input.message-area::placeholder{
-          padding-left: 10px;
-          font-size: 16px;
-          color: #434A54;
+          input.text-box::placeholder{
+            padding-left: 10px;
+            font-size: 16px;
+            color: #434A54;
           }
           label{
-          position: absolute;
-          line-height: 50px;
-          right: 10px;
-          bottom: 0;
-            input.image{
+            position: absolute;
+            line-height: 50px;
+            right: 10px;
+            bottom: 0;
+          }
+          input.image-form{
             display: none;
-            }
           }
         }
-        input.message-button{
-          border-style: none
-        }
-        .message-button{
+        &__button{
           background-color: #38AEF0;
           color: #FFFFFF;
           width: 100px;
