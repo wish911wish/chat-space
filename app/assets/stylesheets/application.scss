@@ -1,19 +1,19 @@
 @import "./reset";
+@import "./variable";
 @import "font-awesome";
 
 .notification{
-  background-color: #38AEF0;
-  color: #FFFFFF;
+  background-color: $color-common-button;
+  color: $color-common-white;
   min-width: 980px;
   text-align: center;
 }
 .container{
   display: flex;
 
-
   .side{
     background-color: #2f3e51;
-    color: #FFF;
+    color: $color-common-white;
     width: 300px;
     min-width: 300px;
     min-height: 100vh;
@@ -38,7 +38,6 @@
       }
     }
     &__group{
-      background-color: #2f3e51;
       .group-list{
         padding: 20px 20px 0 20px;
         &__group{
@@ -57,7 +56,6 @@
 
 
   .main{
-    background-color: #FFFFFF;
     width: calc(100vw - 300px);
     min-width: 680px;
     position: relative;
@@ -65,7 +63,7 @@
       border-style: solid;
       border-width: medium;
       border: #eeeeee;
-      background-color: #FFFFFF;
+      background-color: $color-common-white;
       position: relative;
     }
     &__group-name{
@@ -75,7 +73,7 @@
     }
     &__group-mem{
       font-size: 12px;
-      color: #999999;
+      color: $color-main-whiteGray;
       padding: 0 40px 0 40px;
     }
     &__group-members{
@@ -85,7 +83,7 @@
       display: inline;
     }
     &__group-edit{
-      color: #38AEF0;
+      color: $color-common-button;
       box-sizing: border-box;
       border: solid 1.5px;
       padding: 0 20px 0 20px;
@@ -94,13 +92,13 @@
       top: 28px;
       right: 40px;
     }
-    &__coments{
+    &__comments{
       background-color: #F5F5F5;
       position: absolute;
       width: 100%;
       height: calc(100% - 98px - 90px);
       overflow-y: scroll;
-      .coment{
+      .comment{
         padding: 40px 0 0 40px;
         &__user{
           font-size: 16px;
@@ -108,10 +106,10 @@
         }
         &__date{
           font-size: 12px;
-          color: #999999;
+          color: $color-main-whiteGray;
         }
         &__text{
-          color: #434A54;
+          color: $color-main-comment;
           font-size: 14px;
           margin-top: 10px;
         }
@@ -138,7 +136,7 @@
           input.text-box::placeholder{
             padding-left: 10px;
             font-size: 16px;
-            color: #434A54;
+            color: $color-main-comment;
           }
           label{
             position: absolute;
@@ -151,8 +149,8 @@
           }
         }
         &__button{
-          background-color: #38AEF0;
-          color: #FFFFFF;
+          background-color: $color-common-button;
+          color: $color-common-white;
           width: 100px;
           float: right;
           text-align: center;
