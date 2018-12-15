@@ -1,6 +1,8 @@
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
+@import "./side";
+@import "./main";
 
 .notification{
   background-color: $color-common-button;
@@ -10,153 +12,8 @@
 }
 .container{
   display: flex;
-
-  .side{
-    background-color: #2f3e51;
-    color: $color-common-white;
-    width: 300px;
-    min-width: 300px;
-    min-height: 100vh;
-    &__user{
-      background-color: #253141;
-      .user{
-        padding: 35px 20px 40px 20px;
-        &__name{
-          font-weight: bold;
-          font-size: 16px;
-        }
-        &__edit{
-          display: inline;
-          float: right;
-          margin: 0 3px;
-        }
-        &__congig{
-          display: inline;
-          float: right;
-          margin: 0 3px;
-        }
-      }
-    }
-    &__group{
-      .group-list{
-        padding: 20px 20px 0 20px;
-        &__group{
-          margin: 0 0 40px 0;
-        }
-        &__group-name{
-          font-size: 15px;
-        }
-        &__group-comments{
-          font-size: 11px;
-          margin-top: 5px;
-        }
-      }
-    }
-  }
-
-
-  .main{
-    width: calc(100vw - 300px);
-    min-width: 680px;
-    position: relative;
-    &__group{
-      border-style: solid;
-      border-width: medium;
-      border: #eeeeee;
-      background-color: $color-common-white;
-      position: relative;
-    }
-    &__group-name{
-      font-size: 20px;
-      color: #333333;
-      padding: 35px 40px 15px 40px;
-    }
-    &__group-mem{
-      font-size: 12px;
-      color: $color-main-whiteGray;
-      padding: 0 40px 0 40px;
-    }
-    &__group-members{
-      display: inline;
-    }
-    &__group-member{
-      display: inline;
-    }
-    &__group-edit{
-      color: $color-common-button;
-      box-sizing: border-box;
-      border: solid 1.5px;
-      padding: 0 20px 0 20px;
-      position: absolute;
-      line-height: 40px;
-      top: 28px;
-      right: 40px;
-    }
-    &__comments{
-      background-color: #F5F5F5;
-      position: absolute;
-      width: 100%;
-      height: calc(100% - 98px - 90px);
-      overflow-y: scroll;
-      .comment{
-        padding: 40px 0 0 40px;
-        &__user{
-          font-size: 16px;
-          font-weight: bold;
-        }
-        &__date{
-          font-size: 12px;
-          color: $color-main-whiteGray;
-        }
-        &__text{
-          color: $color-main-comment;
-          font-size: 14px;
-          margin-top: 10px;
-        }
-      }
-    }
-    &__send{
-      background-color: #DCDCDC;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      .input-area{
-        width: calc(100% - 80px);
-        display: inline-block;
-        padding: 20px 40px 20px 40px;
-        &__text{
-          width: calc(100% - 115px);
-          display: inline-block;
-          position: relative;
-          input.text-box{
-            width: 100%;
-            height: 50px;
-            box-sizing: border-box;
-          }
-          input.text-box::placeholder{
-            padding-left: 10px;
-            font-size: 16px;
-            color: $color-main-comment;
-          }
-          label{
-            position: absolute;
-            line-height: 50px;
-            right: 10px;
-            bottom: 0;
-          }
-          input.image-form{
-            display: none;
-          }
-        }
-        &__button{
-          background-color: $color-common-button;
-          color: $color-common-white;
-          width: 100px;
-          float: right;
-          text-align: center;
-          line-height: 50px;
-        }
-      }
-    }
-  }
 }
+
+
+
+

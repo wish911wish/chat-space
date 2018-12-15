@@ -1,0 +1,42 @@
+.side{
+  background-color: #2f3e51;
+  color: $color-common-white;
+  width: 300px;
+  min-width: 300px;
+  min-height: 100vh;
+  &__user{
+    background-color: #253141;
+    .user{
+      padding: 35px 20px 40px 20px;
+      &__name{
+        font-weight: bold;
+        font-size: 16px;
+      }
+      &__edit{
+        display: inline;
+        float: right;
+        margin: 0 3px;
+      }
+      &__congig{
+        display: inline;
+        float: right;
+        margin: 0 3px;
+      }
+    }
+  }
+  &__group{
+    .group-list{
+      padding: 20px 20px 0 20px;
+      &__group{
+        margin: 0 0 40px 0;
+      }
+      &__group-name{
+        font-size: 15px;
+      }
+      &__group-comments{
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
