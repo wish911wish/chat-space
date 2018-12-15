@@ -10,13 +10,13 @@
       .group-list
         .group-list__group
           .group-list__group-name グループ１
-          .group-list__group-comments グループ１のコメント
+          .group-list__group-messages グループ１のコメント
         .group-list__group
           .group-list__group-name グループ2
-          .group-list__group-comments グループ2のコメント
+          .group-list__group-messages グループ2のコメント
         .group-list__group
           .group-list__group-name グループ3
-          .group-list__group-comments グループ3のコメント
+          .group-list__group-messages グループ3のコメント
   .main
     .main__group
       .group-name グループ１
@@ -28,69 +28,69 @@
           %li.group-mem メンバー３
       .group-edit
         %a Edit
-    .main__comments
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
-      .comment
-        .comment__data
-          %span.comment__user user01
-          %span.comment__date 2016/10/02 06:27:07
-        .comment__text コメントコメントコメント
+    .main__messages
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
+      .message
+        .message__data
+          %span.message__user user01
+          %span.message__date 2016/10/02 06:27:07
+        .message__text コメントコメントコメント
     .main__send
-      %form.input-area{:action => "", :method => "post"}
+      %form.input-area{:action => "/", :method => "post"}
         .input-area__text
           %input.text-box{:type => "text", :name => "message", :placeholder => "type a message"}
           %label

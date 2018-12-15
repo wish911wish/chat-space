@@ -3,7 +3,7 @@
   color: $color-common-white;
   width: 300px;
   min-width: 300px;
-  min-height: 100vh;
+  min-height: calc(100vh - 24px);
   &__user{
     background-color: #253141;
     .user{
@@ -33,7 +33,7 @@
       &__group-name{
         font-size: 15px;
       }
-      &__group-comments{
+      &__group-messages{
         font-size: 11px;
         margin-top: 5px;
       }
