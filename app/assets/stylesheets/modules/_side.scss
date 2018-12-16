@@ -3,7 +3,7 @@
   color: $color-common-white;
   width: 300px;
   min-width: 300px;
-  min-height: calc(100vh - 24px);
+  min-height: 100vh;
   &__user{
     background-color: #253141;
     .user{
