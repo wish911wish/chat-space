@@ -1,22 +1,6 @@
 %p.notification チャットグループが作成されました。
 .container
-  .side
-    .side__user
-      .user
-        %span.user__name 川上
-        .user__congig= fa_icon 'cog'
-        .user__edit= fa_icon 'edit'
-    .side__group
-      .group-list
-        .group-list__group
-          .group-list__group-name グループ１
-          .group-list__group-messages グループ１のコメント
-        .group-list__group
-          .group-list__group-name グループ2
-          .group-list__group-messages グループ2のコメント
-        .group-list__group
-          .group-list__group-name グループ3
-          .group-list__group-messages グループ3のコメント
+  = render partial: "./shared/side_bar"
   .main
     .main__group
       .group-name グループ１

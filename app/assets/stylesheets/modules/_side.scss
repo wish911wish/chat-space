@@ -16,11 +16,9 @@
         display: inline;
         float: right;
         margin: 0 3px;
-      }
-      &__congig{
-        display: inline;
-        float: right;
-        margin: 0 3px;
+        & a{
+          color: $color-common-white;
+        }
       }
     }
   }
