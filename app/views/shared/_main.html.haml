@@ -1,0 +1,83 @@
+.main
+  .main__group
+    .group-name グループ１
+    .group-member
+      %span member
+      %ul.group-members
+        %li.group-mem メンバー１
+        %li.group-mem メンバー２
+        %li.group-mem メンバー３
+    .group-edit
+      = link_to "Edit",edit_group_path(2)
+  .main__messages
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+    .message
+      .message__data
+        %span.message__user user01
+        %span.message__date 2016/10/02 06:27:07
+      .message__text コメントコメントコメント
+  .main__send
+    %form.input-area{:action => "/", :method => "post"}
+      .input-area__text
+        %input.text-box{:type => "text", :name => "message", :placeholder => "type a message"}
+        %label
+          = fa_icon 'image'
+          %input.image-form{:type => "file", :name => "image"}
+      %input.input-area__button{:type => "submit", :value => "Send"}
+
+
+

@@ -27,12 +27,17 @@
     .group-edit{
       color: $color-common-button;
       position: absolute;
-      line-height: 40px;
       top: 28px;
       right: 40px;
       box-sizing: border-box;
       border: solid 1.5px;
-      padding: 0 20px 0 20px;
+      & a{
+        color: $color-common-button;
+        display: block;
+        line-height: 40px;
+        text-decoration: none;
+        padding: 0 20px 0 20px;
+      }
     }
   }
 
