@@ -10,7 +10,7 @@
 ### Association
 - has_many :groups, through: :members
 - has_many :members
-- has_many :comments
+- has_many :messages
 
 ## groups table
 
@@ -21,7 +21,7 @@
 ### Association
 - has_many :users, through: :members
 - has_many :members
-- has_many :comments
+- has_many :messages
 
 ## members table
 
@@ -34,7 +34,7 @@
 - belongs_to :user
 - belongs_to :group
 
-## comments table
+## messages table
 
 |Column|Type|Options|
 |------|----|-------|
