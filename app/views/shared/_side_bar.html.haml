@@ -11,12 +11,9 @@
           = fa_icon 'edit'
   .side__group
     .group-list
-      .group-list__group
-        .group-list__group-name グループ１
-        .group-list__group-messages グループ１のコメント
-      .group-list__group
-        .group-list__group-name グループ2
-        .group-list__group-messages グループ2のコメント
-      .group-list__group
-        .group-list__group-name グループ3
-        .group-list__group-messages グループ3のコメント
+      - @groups.each do |group|
+        .group-list__group
+          .group-list__group-name
+            = group.name
+          .group-list__group-messages まだメッセージがありません
+
