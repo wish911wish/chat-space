@@ -1,8 +1,5 @@
 class MessagesController < ApplicationController
-
   def index
-  end
-
-  def create
+    @groups = current_user.groups.order("created_at DESC")
   end
 end

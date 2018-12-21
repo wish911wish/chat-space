@@ -7,16 +7,13 @@
         = link_to edit_user_path(current_user) do
           = fa_icon 'cog'
       %li.user__edit
-        = link_to do
+        = link_to new_group_path do
           = fa_icon 'edit'
   .side__group
     .group-list
-      .group-list__group
-        .group-list__group-name グループ１
-        .group-list__group-messages グループ１のコメント
-      .group-list__group
-        .group-list__group-name グループ2
-        .group-list__group-messages グループ2のコメント
-      .group-list__group
-        .group-list__group-name グループ3
-        .group-list__group-messages グループ3のコメント
+      - @groups.each do |group|
+        .group-list__group
+          .group-list__group-name
+            = group.name
+          .group-list__group-messages まだメッセージがありません
+
