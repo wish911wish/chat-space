@@ -13,7 +13,9 @@
     .group-list
       - @groups.each do |group|
         .group-list__group
-          .group-list__group-name
-            = group.name
-          .group-list__group-messages まだメッセージがありません
+          = link_to group_messages_path(group) do
+            .group-list__group-name
+              = group.name
+            .group-list__group-messages
+              まだメッセージがありません
 
