@@ -20,6 +20,7 @@
             = message.created_at
         .message__text
           = message.content
+        = image_tag message.image()
 
   .main__send
     = form_for Message.new, url: {action: :index} do |f|
