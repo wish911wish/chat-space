@@ -1,83 +1,35 @@
 .main
   .main__group
-    .group-name グループ１
+    .group-name
+      = group.name
     .group-member
-      %span member
+      %span Members:
       %ul.group-members
-        %li.group-mem メンバー１
-        %li.group-mem メンバー２
-        %li.group-mem メンバー３
+        - group.users.each do |user|
+          %li.group-mem
+            = user.name
     .group-edit
-      = link_to "Edit",edit_group_path(2)
+      = link_to "Edit",edit_group_path(group)
   .main__messages
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
-    .message
-      .message__data
-        %span.message__user user01
-        %span.message__date 2016/10/02 06:27:07
-      .message__text コメントコメントコメント
+    - messages.each do |message|
+      .message
+        .message__data
+          %span.message__user
+            = message.user.name
+          %span.message__date
+            = message.created_at
+        .message__text
+          = message.content
+
   .main__send
-    %form.input-area{:action => "/", :method => "post"}
-      .input-area__text
-        %input.text-box{:type => "text", :name => "message", :placeholder => "type a message"}
-        %label
-          = fa_icon 'image'
-          %input.image-form{:type => "file", :name => "image"}
-      %input.input-area__button{:type => "submit", :value => "Send"}
+    = form_for Message.new, url: {action: :index} do |f|
+      .input-area
+        .input-area__text
+          = f.text_field :content, class: "text-box", placeholder: "type a message"
+          = f.label :image do
+            = fa_icon 'image'
+            = f.file_field :image, class: "image-form"
+        = f.submit "Send", class: "input-area__button"
 
 
 
