@@ -27,6 +27,7 @@
       padding: 20px 20px 0 20px;
       &__group{
         margin: 0 0 40px 0;
+        @include hover-opacity();
       }
       &__group-name{
         font-size: 15px;
