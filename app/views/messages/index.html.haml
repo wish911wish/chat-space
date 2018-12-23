@@ -1,4 +1,29 @@
 .container
   = render "./shared/side_bar"
-  = render "./shared/main", group: @group, messages: @messages
+  .main
+    .main__group
+      .group-name
+        = @group.name
+      .group-member
+        %span Members:
+        %ul.group-members
+          - @group.users.each do |user|
+            %li.group-mem
+              = user.name
+      .group-edit
+        = link_to "Edit",edit_group_path(@group)
+    .main__messages
+      = render @messages
+    .main__send
+      = form_for [@group, @message] do |f|
+        .input-area
+          .input-area__text
+            = f.text_field :content, class: "text-box", placeholder: "type a message"
+            = f.label :image do
+              = fa_icon 'image'
+              = f.file_field :image, class: "image-form"
+          = f.submit "Send", class: "input-area__button"
+
+
+
 

@@ -1,13 +1,20 @@
 class MessagesController < ApplicationController
-  before_action :set_group, only: [:index]
+  before_action :set_group
 
   def index
-    @messages = @group.messages
+    @message = Message.new
+    @messages = @group.messages.includes(:user)
   end
 
   def create
-    Message.create(content: message_params[:content], image: message_params[:image], group_id: params[:group_id], user_id: current_user.id)
-    redirect_to group_messages_path(params[:group_id])
+    @message = @group.messages.new(message_params)
+    if @message.save
+      redirect_to group_messages_path(@group)
+    else
+      @messages = @group.messages.includes(:user)
+      flash.now[:alert] = "メッセージを入力してください。"
+      render :index
+    end
   end
 
   private
@@ -16,6 +23,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:content, :image)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 end

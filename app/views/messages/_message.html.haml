@@ -1,0 +1,10 @@
+.message
+  .message__data
+    %span.message__user
+      = message.user.name
+    %span.message__date
+      = message.created_at
+  .message__text
+    - if message.content.present?
+      = message.content
+  = image_tag message.image.url if message.image.present?
