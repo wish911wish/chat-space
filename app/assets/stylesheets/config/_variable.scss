@@ -5,3 +5,8 @@ $color-main-message: #434A54;
 $color-main-whiteGray: #999999;
 
 $alert_orange: #F35500;
+
+
+@mixin hover-opacity(){
+  &:hover {opacity: 0.6;}
+}
