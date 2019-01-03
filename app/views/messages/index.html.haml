@@ -12,13 +12,13 @@
               = user.name
       .group-edit
         = link_to "Edit",edit_group_path(@group)
-    .main__messages
+    .main__messages.js-message-list
       = render @messages
     .main__send
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], id: "new_message" do |f|
         .input-area
-          .input-area__text
-            = f.text_field :content, class: "text-box", placeholder: "type a message"
+          .input-area__text.js-message-send-area
+            = f.text_field :content, class: "text-box js-message-content", placeholder: "type a message"
             = f.label :image do
               = fa_icon 'image'
               = f.file_field :image, class: "image-form"
