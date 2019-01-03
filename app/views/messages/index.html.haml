@@ -18,7 +18,7 @@
       = form_for [@group, @message], id: "new_message" do |f|
         .input-area
           .input-area__text.js-message-send-area
-            = f.text_field :content, class: "text-box js-message-content", placeholder: "type a message"
+            = f.text_field :content, class: "text-box js-message-content", placeholder: "type a message", autocomplete: "off"
             = f.label :image do
               = fa_icon 'image'
               = f.file_field :image, class: "image-form"
