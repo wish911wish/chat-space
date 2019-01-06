@@ -37,13 +37,8 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(messages){
-      var lastMessageId = $('.message').last().attr("message_id")
-      messages.forEach(function(message){
-        if (lastMessageId < message.id) {
-          buildHTML(message);
-        }
-      })
+    .done(function(message){
+      buildHTML(message)
       $('.js-message-list').animate({scrollTop: $('.js-message-list')[0].scrollHeight}, 500, 'swing');
       $('.js-message-content').val('');
     })
