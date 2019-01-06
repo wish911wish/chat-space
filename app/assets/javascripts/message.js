@@ -1,12 +1,14 @@
 $(function() {
 
   function buildHTML(message){
-    var htmlMessageInfo = ""
-    var htmlMessageContent = ""
     var htmlMessageImage = ""
-    var htmlMessageEndTag = ""
     var htmlMessage = ""
-    htmlMessageInfo = `
+
+    if (message.image.url){
+      htmlMessageImage = `<img src="${message.image.url}" >`
+    }
+
+    htmlMessage = `
     <div class="message" message_id="${message.id}">
       <div class="message__data">
         <span class="message__user">
@@ -15,20 +17,11 @@ $(function() {
         <span class="message__date">
         ${message.created_at}
         </span>
-      </div>`
-    if (message.content){
-      htmlMessageContent = `
-      <div class="message__text">
-      ${message.content}
-      </div>`
-    }
-    if (message.image.url){
-      htmlMessageImage = `
-      <img src="${message.image.url}" >`
-    }
-    htmlMessageEndTag = `
+      </div>
+      <div class="message__text">${message.content}</div>
+      ${htmlMessageImage}
     </div>`
-    htmlMessage = htmlMessageInfo + htmlMessageContent + htmlMessageImage + htmlMessageEndTag
+
     $('.js-message-list').append(htmlMessage);
   }
 
