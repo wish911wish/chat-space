@@ -2,13 +2,12 @@ $(function() {
 
   function buildHTML(message){
     var htmlMessageImage = ""
-    var htmlMessage = ""
 
     if (message.image.url){
       htmlMessageImage = `<img src="${message.image.url}" >`
     }
 
-    htmlMessage = `
+    var htmlMessage = `
     <div class="message" message_id="${message.id}">
       <div class="message__data">
         <span class="message__user">
