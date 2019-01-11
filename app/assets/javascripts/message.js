@@ -24,6 +24,15 @@ $(document).on("turbolinks:load", function() {
     $('.js-message-list').append(htmlMessage);
   }
 
+  function buildUserList(user){
+    var htmlUserList = `
+    <div class="chat-group-user clearfix">
+      <p class="chat-group-user__name">${user.name}</p>
+      <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
+    </div>`
+    $('#user-search-result').append(htmlUserList);
+  }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -47,5 +56,23 @@ $(document).on("turbolinks:load", function() {
     .always(function(){
       $(".input-area__button").removeAttr("disabled");
     });
+  })
+
+  $('#user-search-field').on('keyup', function() {
+    var input = $('#user-search-field').val()
+    $.ajax({
+      url: '/users',
+      type: "GET",
+      data: { keyword: input },
+      dataType: 'json',
+    })
+    .done(function(users) {
+      users.forEach(function(user){
+        buildUserList(user)
+      })
+    })
+    .fail(function(){
+      alert('ユーザー検索に失敗しました');
+    })
   })
 });
