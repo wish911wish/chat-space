@@ -88,14 +88,12 @@ $(document).on("turbolinks:load", function() {
 
   $(document).off('click', '.chat-group-user__btn--add');
   $(document).on('click', '.chat-group-user__btn--add', function(){
-    var $this = $(this)
-    $this.closest('.chat-group-user').remove()
-    buildChatMemberList($this)
+    $(this).closest('.chat-group-user').remove()
+    buildChatMemberList($(this))
   })
 
   $(document).off('click', '.chat-group-user__btn--remove');
   $(document).on('click', '.chat-group-user__btn--remove', function(){
-    var $this = $(this)
-    $this.closest('.chat-group-user').remove()
+    $(this).closest('.chat-group-user').remove()
   })
 });
