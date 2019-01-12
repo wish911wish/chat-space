@@ -17,15 +17,24 @@
         チャットメンバーを追加
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input.chat-group-form__input#user-search-field{placeholder: "追加したいユーザー名を入力してください", type: "text"}
+        %input.chat-group-form__field__input#user-search-field{placeholder: "追加したいユーザー名を入力してください", type: "text", autocomplete: "off"}
       #user-search-result
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      = f.label :user_id, class: "chat-group-form__label" do
+      = f.label :user_id, "",class: "chat-group-form__label" do
         チャットメンバー
     .chat-group-form__field--right
-      = f.collection_check_boxes :user_ids, User.all,  :id, :name, include_hidden: false
+      #user-additional-target
+        .chat-group-user.clearfix.js-chat-member{id: "chat-group-user-#{current_user.id}"}
+          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+          %p.chat-group-user__name=current_user.name
+        - group.users.each do |user|
+          - if current_user.id != user.id
+            .chat-group-user.clearfix.js-chat-member{id: "chat-group-user-#{user.id}"}
+              %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+              %p.chat-group-user__name=user.name
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
