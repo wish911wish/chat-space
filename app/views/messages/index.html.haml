@@ -2,7 +2,7 @@
   = render "./shared/side_bar"
   .main
     .main__group
-      .group-name
+      .group-name{group_id: @group.id}
         = @group.name
       .group-member
         %span Members:
