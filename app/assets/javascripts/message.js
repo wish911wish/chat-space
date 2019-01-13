@@ -118,14 +118,12 @@ $(document).on("turbolinks:load", function() {
   })
 
   if ($(".main__group")[0]){
-    console.log("読み込まれたよ")
     if (window.set_timer_on == false){
       window.timer = setInterval('autoUpdateMessage()', 5000);
       window.set_timer_on == true;
     }
   }
   else{
-    console.log("解除されたよ")
     clearInterval(window.timer)
     window.timer = null
     window.set_timer_on == false;
