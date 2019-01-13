@@ -42,6 +42,29 @@ $(document).on("turbolinks:load", function() {
     $('#user-additional-target').append(htmlChatMemberList);
   }
 
+  autoUpdateMessage = function(){
+    var url = `/groups/${$('.group-name').attr('group_id')}/messages`
+    $.ajax({
+      url: url,
+      type: "GET",
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(messages){
+      var lastMessageId = $('.message').last().attr("message_id")
+      messages.forEach(function(message){
+        if (lastMessageId < message.id) {
+          buildHTML(message);
+          $('.js-message-list').animate({scrollTop: $('.js-message-list')[0].scrollHeight}, 500, 'swing');
+        }
+      })
+    })
+    .fail(function(){
+      alert('メッセージの送信に失敗しました');
+    })
+  }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -96,4 +119,12 @@ $(document).on("turbolinks:load", function() {
   $(document).on('click', '.chat-group-user__btn--remove', function(){
     $(this).closest('.chat-group-user').remove()
   })
+
+  if ($(".main__group")[0]){
+    window.timer = setInterval('autoUpdateMessage()', 5000);
+  }
+  else{
+    clearInterval(window.timer)
+    window.timer = null
+  }
 });
