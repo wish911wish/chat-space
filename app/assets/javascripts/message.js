@@ -43,7 +43,7 @@ $(document).on("turbolinks:load", function() {
   }
 
   autoUpdateMessage = function(){
-    var url = `/groups/${$('.group-name').attr('group_id')}/messages`
+    var url = location.href
     var lastMessageId = $('.message').last().attr("message_id")
     $.ajax({
       url: url,
