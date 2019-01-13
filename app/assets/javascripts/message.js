@@ -44,20 +44,17 @@ $(document).on("turbolinks:load", function() {
 
   autoUpdateMessage = function(){
     var url = `/groups/${$('.group-name').attr('group_id')}/messages`
+    var lastMessageId = $('.message').last().attr("message_id")
     $.ajax({
       url: url,
       type: "GET",
+      data: { last_messate_id: lastMessageId },
       dataType: 'json',
-      processData: false,
-      contentType: false
     })
     .done(function(messages){
-      var lastMessageId = $('.message').last().attr("message_id")
       messages.forEach(function(message){
-        if (lastMessageId < message.id) {
-          buildHTML(message);
-          $('.js-message-list').animate({scrollTop: $('.js-message-list')[0].scrollHeight}, 500, 'swing');
-        }
+        buildHTML(message);
+        $('.js-message-list').animate({scrollTop: $('.js-message-list')[0].scrollHeight}, 500, 'swing');
       })
     })
     .fail(function(){
