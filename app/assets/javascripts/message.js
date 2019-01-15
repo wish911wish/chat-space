@@ -118,14 +118,14 @@ $(document).on("turbolinks:load", function() {
   })
 
   if ($(".main__group")[0]){
-    if (window.set_timer_on == false){
+    if (window.set_timer_on == null || window.set_timer_on == false){
       window.timer = setInterval('autoUpdateMessage()', 5000);
-      window.set_timer_on == true;
+      window.set_timer_on = true;
     }
   }
   else{
     clearInterval(window.timer)
     window.timer = null
-    window.set_timer_on == false;
+    window.set_timer_on = false;
   }
 });
